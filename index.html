@@ -1,7 +1,9 @@
 <html>
 <head>
-<script src="matter.js"></script>
-<script src="matter-wrap.js"></script>
+<script src="js/matter.js"></script>
+<script src="js/matter-wrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.0/pathseg.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.2.1/build/decomp.min.js"></script>
 <title>1234567890</title>
 <style>
 canvas {
@@ -27,9 +29,6 @@ window.onresize = function(){
 
 
 
-Matter.use('matter-wrap');
-//Matter.use(MatterWrap);
-
 
 
 var hei = window.innerHeight*0.95,
@@ -40,9 +39,15 @@ var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
+	Vertices = Matter.Vertices,
     Common = Matter.Common,
     Composite = Matter.Composite,
+	Svg = Matter.Svg,
 	MouseConstraint = Matter.MouseConstraint; //마우스 인터렉션
+
+Matter.use('matter-wrap');
+//Matter.use(MatterWrap);
+//Common.setDecomp(require('poly-decomp'));
 
 
 // create an engine
@@ -85,7 +90,7 @@ var boxA = Bodies.rectangle(100, 500, 100, 80, {
 		}
 });
 //var boxB = Bodies.rectangle(150, 50, 80, 80);
-//var ground = Bodies.rectangle(700, 610, 2010, 60, { isStatic: true });
+var ground = Bodies.rectangle(700, 910, 2010, 60, { isStatic: true });
  if (typeof fetch !== 'undefined') {
         var select = function(root, selector) {
             return Array.prototype.slice.call(root.querySelectorAll(selector));
@@ -98,23 +103,27 @@ var boxA = Bodies.rectangle(100, 500, 100, 80, {
         };
 
         ([
-                        './svg/dot.svg', 
-                        './svg/ㄴ.svg',
-                        './svg/ㅇ.svg',
+            './svg/dot.svg',
+            './svg/ㄴ.svg',
+            './svg/ㅇ-2.svg',
 			'./svg/ㅇ-2.svg',
 			'./svg/ㅈ.svg',
-			'./svg/ㅎ.svg',
+			'./svg/ㅎ7-1.svg',
+			'./svg/ㅎ7-2.svg',
+			'./svg/ㅎ7-3-2.svg',
 			'./svg/ㅓ.svg',
 			'./svg/ㅕ.svg',
-                        './svg/ㅗ.svg'
+            './svg/ㅗ.svg'
         ]).forEach(function(path, i) { 
             loadSvg(path).then(function(root) {
-                var color = Common.choose(['#f19648', '#f5d259', '#f55a3c', '#063e7b', '#ececd1']);
+                //var color = Common.choose(['#f19648', '#f5d259', '#f55a3c', '#063e7b', '#ececd1']);
+				var color = "#ffffff"
 
                 var vertexSets = select(root, 'path')
-                    .map(function(path) { return Vertices.scale(Svg.pathToVertices(path, 30), 0.4, 0.4); });
+                    .map(function(path) { return Vertices.scale(Svg.pathToVertices(path, 3), 1, 1); });
 
                 Composite.add(engine.world, Bodies.fromVertices(100 + i * 150, 200 + i * 50, vertexSets, {
+				frictionAir: 0.1,
                     render: {
                         fillStyle: color,
                         strokeStyle: color,
@@ -145,7 +154,7 @@ Composite.add(engine.world, mouseConstraint);
 // add all of the bodies to the world //물체 추가
 //Composite.add(engine.world, [boxA, boxB, ground]);
 Composite.add(engine.world, boxA);
-//Composite.add(engine.world, ground);
+Composite.add(engine.world, ground);
 
 
 
