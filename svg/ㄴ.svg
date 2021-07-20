@@ -1,13 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="121" height="99" viewBox="0 0 121 99">
+<svg xmlns="http://www.w3.org/2000/svg" width="120.002" height="98.813" viewBox="0 0 120.002 98.813">
   <defs>
     <style>
       .cls-1 {
-        font-size: 121.177px;
         fill: #171810;
-        font-family: NanumBarunGothic;
-        font-weight: 700;
+        fill-rule: evenodd;
       }
     </style>
   </defs>
-  <text id="_" data-name="ㄴ" class="cls-1" transform="translate(-29.999 111.799) scale(1.65)">ㄴ</text>
+  <path id="_" data-name="ㄴ" class="cls-1" d="M1022.2,649.8H926.6V572H902.2v98.8h120v-21Z" transform="translate(-902.188 -572)"/>
 </svg>
