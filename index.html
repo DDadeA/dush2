@@ -113,7 +113,7 @@ var loadSvg = function(url) {
                 var vertexSets = select(root, 'path')
                     .map(function(path) { return Vertices.scale(Svg.pathToVertices(path, 30), 0.4, 0.4); });
 
-                Composite.add(world, Bodies.fromVertices(100 + i * 150, 200 + i * 50, vertexSets, {
+                Composite.add(engine.world, Bodies.fromVertices(100 + i * 150, 200 + i * 50, vertexSets, {
                     render: {
                         fillStyle: color,
                         strokeStyle: color,
