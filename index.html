@@ -86,17 +86,18 @@ var boxA = Bodies.rectangle(100, 500, 100, 80, {
 });
 //var boxB = Bodies.rectangle(150, 50, 80, 80);
 //var ground = Bodies.rectangle(700, 610, 2010, 60, { isStatic: true });
-var select = function(root, selector) {
+ if (typeof fetch !== 'undefined') {
+        var select = function(root, selector) {
             return Array.prototype.slice.call(root.querySelectorAll(selector));
         };
 
-var loadSvg = function(url) {
-        return fetch(url)
-            .then(function(response) { return response.text(); })
-            .then(function(raw) { return (new window.DOMParser()).parseFromString(raw, 'image/svg+xml'); });
-    };
-		
-([
+        var loadSvg = function(url) {
+            return fetch(url)
+                .then(function(response) { return response.text(); })
+                .then(function(raw) { return (new window.DOMParser()).parseFromString(raw, 'image/svg+xml'); });
+        };
+
+        ([
                         './svg/dot.svg', 
                         './svg/ㄴ.svg',
                         './svg/ㅇ.svg',
@@ -123,6 +124,10 @@ var loadSvg = function(url) {
             });
         });
 
+        });
+    } else {
+        Common.warn('Fetch is not available. Could not load SVG.');
+    }
 
 
 //마우스 인터렉션 설정
