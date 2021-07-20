@@ -117,13 +117,25 @@ var ground = Bodies.rectangle(700, 910, 2010, 60, { isStatic: true });
         ]).forEach(function(path, i) { 
             loadSvg(path).then(function(root) {
                 //var color = Common.choose(['#f19648', '#f5d259', '#f55a3c', '#063e7b', '#ececd1']);
-				var color = "#ffffff"
+				var color = "#171810"
 
                 var vertexSets = select(root, 'path')
                     .map(function(path) { return Vertices.scale(Svg.pathToVertices(path, 3), 1, 1); });
 
                 Composite.add(engine.world, Bodies.fromVertices(100 + i * 150, 200 + i * 50, vertexSets, {
 				frictionAir: 0.1,
+				plugin: {
+					wrap: {
+						min: {
+							x:0,
+							y:0
+						},
+						max: {
+							x: render.canvas.width,
+							y: render.canvas.height
+						}
+					}
+				},
                     render: {
                         fillStyle: color,
                         strokeStyle: color,
