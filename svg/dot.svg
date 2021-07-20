@@ -1,11 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="34.19" height="32.625" viewBox="0 0 34.19 32.625">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #fc5956;
-        fill-rule: evenodd;
-      }
-    </style>
-  </defs>
-  <path id="_." data-name="." class="cls-1" d="M1391.7,667.1a15.733,15.733,0,0,0-4.9,11.5,15.406,15.406,0,0,0,4.9,11.4,16.622,16.622,0,0,0,12.1,4.8,16.876,16.876,0,0,0,12.3-4.8,15.406,15.406,0,0,0,4.9-11.4,15.733,15.733,0,0,0-4.9-11.5,16.7,16.7,0,0,0-12.3-4.9A16.447,16.447,0,0,0,1391.7,667.1Z" transform="translate(-1386.81 -662.188)"/>
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+
+	 width="512px" height="512px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+
+<path id="_." data-name="." class="cls-1" d="M1391.7,667.1a15.733,15.733,0,0,0-4.9,11.5,15.406,15.406,0,0,0,4.9,11.4,16.622,16.622,0,0,0,12.1,4.8,16.876,16.876,0,0,0,12.3-4.8,15.406,15.406,0,0,0,4.9-11.4,15.733,15.733,0,0,0-4.9-11.5,16.7,16.7,0,0,0-12.3-4.9A16.447,16.447,0,0,0,1391.7,667.1Z" transform="translate(-1386.81 -662.188)"/>
+
+	L219.864,428.377L50,245.41z"/>
+
 </svg>
+
